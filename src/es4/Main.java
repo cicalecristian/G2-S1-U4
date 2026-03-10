@@ -5,23 +5,23 @@ import java.util.Scanner;
 public class Main {
 
     static String countdown(int secondi) {
-        String risultato = "";
+        StringBuilder risultato = new StringBuilder();
 
         for (int i = secondi; i > 0; i--) {
 
             if (i % 2 == 0) {
-                risultato += "[OK]" + " " + i + "\n";
+                risultato.append("[OK]" + " ").append(i).append("\n");
             } else {
-                risultato += "[CHECK]" + " " + i + "\n";
+                risultato.append("[CHECK]" + " ").append(i).append("\n");
             }
 
             if (i == 10) {
-                risultato += "--- SEPARAZIONE STADIO ---\n";
+                risultato.append("--- SEPARAZIONE STADIO ---\n");
             }
         }
-        risultato += "--- IGNITION ---\n";
+        risultato.append("--- IGNITION ---\n");
 
-        return risultato;
+        return risultato.toString();
     }
 
     static void main(String[] args) {
